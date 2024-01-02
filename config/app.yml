@@ -1,0 +1,6 @@
+mongodb:
+  user: admin
+  password: admin
+  host: localhost
+  port: 27017
+  name: thai-etax

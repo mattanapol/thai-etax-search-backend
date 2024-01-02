@@ -1,0 +1,20 @@
+version: '3.7'
+
+name: thai-etax
+services:
+  mongodb:
+    image: mongo:4.4.26
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+      - MONGO_INITDB_DATABASE=thai-etax
+      - MONGO_INITDB_USERNAME=admin
+      - MONGO_INITDB_PASSWORD=admin
+    volumes:
+      - ./mongo-init.sh:/docker-entrypoint-initdb.d/init-mongo.sh
+      - thai_etax_mongo_data:/data/db
+
+volumes:
+  thai_etax_mongo_data:
